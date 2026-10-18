@@ -91,3 +91,6 @@ button:active,.download-link:active { opacity:.7; }
 
 /* Reuse the product artwork directly, without a CSS tile or filter. */
 .brand img,.footer-brand img { display:block; background:none; border:0; border-radius:0; box-shadow:none; filter:none; }
+
+/* Footer keeps the grayscale product artwork from the reference. */
+.footer-brand img { filter:grayscale(1); }
