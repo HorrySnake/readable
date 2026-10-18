@@ -8,6 +8,11 @@
     document.querySelectorAll('span[lang="zh"], span[lang="en"]').forEach(element => {
       element.hidden = element.lang !== language;
     });
+    const title = document.documentElement.getAttribute(language === 'en' ? 'data-title-en' : 'data-title-zh');
+    if (title) document.title = title;
+    document.querySelectorAll('[data-brand-label]').forEach(element => {
+      element.setAttribute('aria-label', language === 'en' ? 'Parse' : '更好读');
+    });
     if (button) {
       button.textContent = language === 'en' ? '中文' : 'EN';
       button.setAttribute('aria-label', language === 'en' ? '切换到中文' : 'Switch to English');

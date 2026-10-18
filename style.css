@@ -1,5 +1,5 @@
 /* A quiet reading site with one persistent download capsule. */
-:root { color-scheme: dark; --page:#111; --card:#252525; --ink:#f5f5f5; --muted:#aaa; --line:#3a3a3a; }
+:root { color-scheme: dark; --page:#111; --card:#252525; --ink:#f5f5f5; --muted:#aaa; --line:#3a3a3a; --shell-width:940px; --shell-gutter:24px; --shell-inset:22px; --shell-icon:50px; }
 * { box-sizing:border-box; }
 html { -webkit-text-size-adjust:100%; scroll-padding-top:116px; }
 body { margin:0; background:var(--page); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
@@ -15,14 +15,14 @@ button:active,.download-link:active { opacity:.7; }
 @media(hover:hover) and (pointer:fine) { a:hover,button:hover { opacity:.78; } }
 .capsule-header {
  position:fixed; z-index:20; top:max(24px,env(safe-area-inset-top)); left:50%; transform:translateX(-50%);
- width:calc(100% - 48px); max-width:940px; min-height:76px; padding:14px 22px;
+ width:calc(100% - 2 * var(--shell-gutter)); max-width:var(--shell-width); min-height:76px; padding:12px var(--shell-inset);
  display:flex; justify-content:space-between; align-items:center; gap:20px;
  border:1px solid #ffffff1c; border-radius:100px; background:#252525e8;
  box-shadow:inset 0 1px 1px #ffffff0b,0 8px 32px #0002;
  -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
 }
-.brand { display:inline-flex; align-items:center; gap:12px; font-size:18px; font-weight:650; letter-spacing:-.4px; white-space:nowrap; }
-.brand img { width:40px; height:40px; border-radius:10px; }
+.brand { display:inline-flex; align-items:center; gap:10px; font-size:20px; font-weight:650; letter-spacing:-.4px; white-space:nowrap; }
+.brand img { width:var(--shell-icon); height:var(--shell-icon); }
 .download-link { display:inline-flex; justify-content:center; align-items:center; gap:8px; min-height:44px; padding:10px 20px; border-radius:100px; background:#fff; color:#111; font-size:16px; font-weight:550; line-height:1.2; white-space:nowrap; }
 .apple-mark { display:block; flex:none; width:18px; height:21px; }
 .home-main { width:100%; max-width:880px; min-height:calc(100svh - 250px); margin:0 auto; padding:168px 28px 76px; display:flex; align-items:center; justify-content:center; text-align:center; }
@@ -38,21 +38,22 @@ button:active,.download-link:active { opacity:.7; }
 .document p,.document li { font-size:17px; line-height:1.9; color:#ddd; margin:0 0 24px; overflow-wrap:anywhere; }
 .document .meta { color:var(--muted); font-size:13px; margin-bottom:26px; }
 .document a { text-decoration:underline; text-underline-offset:4px; }
-.site-footer { width:100%; max-width:880px; margin:0 auto; padding:0 24px calc(32px + env(safe-area-inset-bottom)); }
-.footer-card { position:relative; padding:28px 36px; background:var(--card); border-radius:28px; }
+.site-footer { width:calc(100% - 2 * var(--shell-gutter)); max-width:var(--shell-width); margin:0 auto; padding:0 0 calc(32px + env(safe-area-inset-bottom)); }
+.footer-card { position:relative; padding:28px var(--shell-inset); border:1px solid transparent; background:var(--card); border-radius:28px; }
 .footer-top { display:flex; align-items:center; justify-content:center; gap:20px; }
 .footer-top #language { position:absolute; right:24px; top:24px; }
 .footer-brand { display:inline-flex; }
-.footer-brand img { width:36px; height:36px; border-radius:9px; filter:grayscale(1); }
+.footer-brand img { width:var(--shell-icon); height:var(--shell-icon); }
 #language { min-width:44px; min-height:44px; padding:8px; border:0; background:transparent; color:var(--muted); font-size:14px; }
 .footer-card nav { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:12px 32px; margin-top:22px; }
-.footer-card nav a { display:inline-flex; align-items:center; min-height:44px; font-size:15px; }
+.footer-card nav a { display:inline-flex; align-items:center; min-height:44px; font-size:16px; }
 .copyright { margin:20px 0 0; color:#999; text-align:center; font-size:13px; }
 @media(max-width:600px) {
+ :root { --shell-gutter:max(12px,env(safe-area-inset-left),env(safe-area-inset-right)); --shell-inset:16px; --shell-icon:42px; }
  html { scroll-padding-top:112px; }
- .capsule-header { top:max(12px,env(safe-area-inset-top)); width:calc(100% - max(24px,env(safe-area-inset-left) + env(safe-area-inset-right))); min-height:68px; padding:10px 16px; gap:12px; }
+ .capsule-header { top:max(12px,env(safe-area-inset-top)); width:calc(100% - 2 * var(--shell-gutter)); min-height:68px; padding:8px var(--shell-inset); gap:12px; }
  .brand { gap:10px; font-size:18px; letter-spacing:-.4px; }
- .brand img { width:34px; height:34px; border-radius:9px; }
+ .brand img { width:var(--shell-icon); height:var(--shell-icon); }
  .capsule-header .download-link { min-height:44px; padding:10px 16px; font-size:16px; gap:7px; }
  .apple-mark { width:18px; height:21px; }
  .home-main { min-height:0; padding:140px 24px 64px; }
@@ -66,11 +67,11 @@ button:active,.download-link:active { opacity:.7; }
  .document h2 { font-size:22px; margin-top:32px; }
  .document p,.document li { font-size:18px; line-height:1.85; }
  .document .meta { font-size:12px; }
- .site-footer { padding-left:20px; padding-right:20px; }
- .footer-card { padding:30px 32px; border-radius:32px; }
+ .site-footer { padding-left:0; padding-right:0; }
+ .footer-card { padding:30px var(--shell-inset); border-radius:32px; }
  .footer-top { justify-content:space-between; }
  .footer-top #language { position:static; }
- .footer-brand img { width:42px; height:42px; }
+ .footer-brand img { width:var(--shell-icon); height:var(--shell-icon); }
  .footer-card nav { flex-direction:column; align-items:flex-start; margin-top:34px; gap:10px; }
  .footer-card nav a { font-size:17px; }
  .copyright { font-size:12px; margin-top:22px; }
@@ -80,10 +81,13 @@ button:active,.download-link:active { opacity:.7; }
 
 /* Desktop footer: brand on the left, document links on the right. */
 @media (min-width:601px) {
- .footer-card { display:flex; align-items:center; justify-content:space-between; gap:32px; min-height:104px; padding:24px 32px; }
+ .footer-card { display:flex; align-items:center; justify-content:space-between; gap:32px; min-height:104px; padding:24px var(--shell-inset); }
  .footer-top { justify-content:flex-start; flex:none; }
- .footer-brand img { width:40px; height:40px; border-radius:10px; }
+ .footer-brand img { width:var(--shell-icon); height:var(--shell-icon); }
  .footer-top #language { top:calc(100% + 8px); right:0; }
  .footer-card nav { margin-top:0; margin-left:auto; justify-content:flex-end; gap:12px 28px; }
- .copyright { min-height:44px; display:flex; align-items:center; justify-content:flex-start; margin-top:8px; padding-right:54px; text-align:left; }
+ .copyright { min-height:44px; display:flex; align-items:center; justify-content:flex-start; margin-top:8px; padding-right:54px; text-align:left; font-size:14px; }
 }
+
+/* Reuse the product artwork directly, without a CSS tile or filter. */
+.brand img,.footer-brand img { display:block; background:none; border:0; border-radius:0; box-shadow:none; filter:none; }
