@@ -77,3 +77,13 @@ button:active,.download-link:active { opacity:.7; }
 }
 @media(prefers-reduced-transparency:reduce) { .capsule-header { background:#252525; -webkit-backdrop-filter:none; backdrop-filter:none; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+/* Desktop footer: brand on the left, document links on the right. */
+@media (min-width:601px) {
+ .footer-card { display:flex; align-items:center; justify-content:space-between; gap:32px; min-height:104px; padding:24px 32px; }
+ .footer-top { justify-content:flex-start; flex:none; }
+ .footer-brand img { width:40px; height:40px; border-radius:10px; }
+ .footer-top #language { top:calc(100% + 8px); right:0; }
+ .footer-card nav { margin-top:0; margin-left:auto; justify-content:flex-end; gap:12px 28px; }
+ .copyright { min-height:44px; display:flex; align-items:center; justify-content:flex-start; margin-top:8px; padding-right:54px; text-align:left; }
+}
