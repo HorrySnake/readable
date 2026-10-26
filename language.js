@@ -1,4 +1,9 @@
 (() => {
+  function canonicalPath(pathname) {
+    const match = pathname.match(/^\/(privacy|terms|support)(?:\/(?:index\.html|privacy\.html|terms\.html|support\.html)?|\.html)?$/);
+    if (match) return '/' + match[1];
+    return pathname === '/index.html' ? '/' : pathname;
+  }
   const button = document.getElementById('language');
   function resolveLanguage() {
     const requested = new URL(location.href).searchParams.get('lang');
@@ -9,6 +14,7 @@
   let language = resolveLanguage();
   function apply() {
     const currentURL = new URL(location.href);
+    currentURL.pathname = canonicalPath(currentURL.pathname);
     currentURL.searchParams.set('lang', language);
     if (currentURL.href !== location.href) history.replaceState(history.state, '', currentURL.href);
     document.documentElement.dataset.language = language;
@@ -26,7 +32,8 @@
       if (!href || href.startsWith('#') || link.hasAttribute('download')) return;
       const destination = new URL(href, location.href);
       if (destination.origin !== location.origin || !['http:', 'https:'].includes(destination.protocol)) return;
-      if (!destination.pathname.endsWith('/') && !/\.html?$/.test(destination.pathname)) return;
+      destination.pathname = canonicalPath(destination.pathname);
+      if (!['/', '/privacy', '/terms', '/support'].includes(destination.pathname)) return;
       destination.searchParams.set('lang', language);
       link.setAttribute('href', destination.pathname + destination.search + destination.hash);
     });

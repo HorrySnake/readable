@@ -5,7 +5,7 @@
 GitHub Pages：Settings → Pages → Deploy from a branch → main / (root)。
 正式地址：https://parse.bycoherent.cn/
 
-页面地址：首页 `/`、隐私政策 `/privacy/`、用户协议 `/terms/`、使用与支持 `/support/`。子目录使用 `index.html` 作为默认文档；共享资源保留在站点根目录，通过相对路径引用。原根目录及子目录中的 `.html` 地址保留跳转，兼容已有 App 链接。
+页面地址：首页 `/`、隐私政策 `/privacy`、用户协议 `/terms`、使用与支持 `/support`。正文存于根目录的 privacy.html、terms.html、support.html，由 GitHub Pages 的无扩展名解析提供 /privacy、/terms、/support。共享资源使用根路径；旧子目录地址保留跳转，原 .html 地址由语言脚本规范化为无扩展名地址，保留查询参数和锚点。
 本地预览：在本目录执行 `python3 -m http.server 8083`。
 
 App 已上架。首页及文档页下载入口指向 App Store（ID 6821259436）。所有页面通过 apple-itunes-app meta 标签启用 Safari Smart App Banner；显示由 Safari 和设备状态决定，iOS 模拟器不显示原生横幅。
