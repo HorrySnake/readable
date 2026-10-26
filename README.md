@@ -38,3 +38,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 2026-10-18 桌面适配修订：首页居中、桌面胶囊 940px / 76px、手机胶囊 68px。桌面页脚收紧居中；仅 iPhone 与 iPad 已上架，Mac 仍在优化中，支持说明与隐私政策平台范围已修正。
+
+语言入口：所有正式页面支持 `?lang=zh`（中文）和 `?lang=en`（English）。有效 URL 参数优先于本机保存的偏好；未指定时沿用本机偏好，首次默认为中文，并将实际语言写入 URL。页脚切换同步修改 URL，站内页面跳转保留语言；外部链接、下载文件和页内锚点不受影响。
