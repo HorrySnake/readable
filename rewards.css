@@ -106,3 +106,32 @@
  .membership-card,.reward-mini-card{transition:transform .35s ease}
  @media(hover:hover){.rewards-art:hover .membership-card{transform:rotate(4deg) translateY(-5px)}.reward-feature:hover .reward-mini-card{transform:rotate(4deg) translateY(-4px)}}
 }
+
+/* Share reward tiers and required hashtag presentation */
+.hashtag-instructions{margin-top:24px}
+.hashtag-instructions h4{font-size:16px;font-weight:700;letter-spacing:-.02em;margin:0 0 8px}
+.hashtag-instructions p{font-size:14px;line-height:1.75;color:#c8bdde;margin:0}
+.hashtag-line{margin-top:16px}
+.hashtag-required{display:inline-flex;align-items:center;gap:9px;border-radius:10px;background:#49375f;border:1px solid #b39add;padding:4px 7px}
+.hashtag-line .hashtag-required code{background:transparent;border:0;padding:4px 6px;color:#f6eeff;font-weight:700;font-size:14px}
+.hashtag-required strong{font-size:10px;color:#22132e;background:#e2ccff;border-radius:5px;padding:4px 6px;font-weight:800;letter-spacing:.04em}
+.hashtag-optional{display:inline-flex}
+.hashtag-optional code{white-space:nowrap}
+.tag-policy-note{font-size:12px!important;color:#ad98c8!important;margin-top:12px!important}
+.reward-feature .reward-tier-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:2px}
+.reward-tier{min-width:0;padding:23px 20px 24px;background:#1c1a23;border:1px solid #49404f;border-radius:21px}
+.reward-tier-highlight{background:linear-gradient(140deg,#4b3867,#31263d 65%,#211d2c);border-color:#ae8ad5}
+.reward-tier-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:11px;color:#bfb2d4}
+.reward-tier-number{font-weight:700;letter-spacing:.1em}
+.reward-tier-metric{font-size:9px;letter-spacing:.06em;opacity:.7;text-align:right}
+.reward-tier-threshold{font-size:40px!important;line-height:1.16!important;font-weight:750;color:#f5eeff!important;letter-spacing:-.05em;margin:23px 0 16px!important;white-space:nowrap}
+.reward-tier-threshold small{font-size:11px;color:#b5a8c8;font-weight:500;letter-spacing:0}
+.reward-tier h3{font-size:20px;line-height:1.4;letter-spacing:-.03em;margin:0 0 9px}
+.reward-feature .reward-tier p:not(.reward-tier-threshold){font-size:12px;color:#bdb4c5;line-height:1.65}
+.reward-feature .reward-tier-disclaimer{grid-column:1/-1;font-size:12px!important;color:#aaa1b3!important;max-width:100%;line-height:1.7;margin:-16px 0 0}
+@media(max-width:760px){
+ .reward-feature .reward-tier-grid{grid-template-columns:1fr;gap:10px}
+ .reward-tier{padding:20px}
+ .reward-tier-threshold{margin:13px 0 10px!important}
+ .reward-feature .reward-tier-disclaimer{margin-top:-18px}
+}
