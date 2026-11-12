@@ -5,7 +5,7 @@
 GitHub Pages：Settings → Pages → Deploy from a branch → main / (root)。
 正式地址：https://parse.bycoherent.cn/
 
-页面地址：首页 `/`、隐私政策 `/privacy`、用户协议 `/terms`、使用与支持 `/support`。正文存于根目录的 privacy.html、terms.html、support.html，由 GitHub Pages 的无扩展名解析提供 /privacy、/terms、/support。共享资源使用根路径；旧子目录地址保留跳转，原 .html 地址由语言脚本规范化为无扩展名地址，保留查询参数和锚点。
+页面地址：首页 `/`、隐私政策 `/privacy`、用户协议 `/terms`、使用与支持 `/support`、免费获取会员 `/rewards`。正文存于根目录的 privacy.html、terms.html、support.html、rewards.html，由 GitHub Pages 的无扩展名解析提供对应路径。共享资源使用根路径；旧子目录地址保留跳转，原 .html 地址由语言脚本规范化为无扩展名地址，保留查询参数和锚点。
 本地预览：在本目录执行 `python3 -m http.server 8083`。
 
 App 已上架。首页及文档页下载入口指向 App Store（ID 6821259436）。所有页面通过 apple-itunes-app meta 标签启用 Safari Smart App Banner；显示由 Safari 和设备状态决定，iOS 模拟器不显示原生横幅。
@@ -40,3 +40,5 @@ THE SOFTWARE.
 2026-10-18 桌面适配修订：首页居中、桌面胶囊 940px / 76px、手机胶囊 68px。桌面页脚收紧居中；仅 iPhone 与 iPad 已上架，Mac 仍在优化中，支持说明与隐私政策平台范围已修正。
 
 语言入口：所有正式页面支持 `?lang=zh`（中文）和 `?lang=en`（English）。有效 URL 参数优先于本机保存的偏好；未指定时沿用本机偏好，首次默认为中文，并将实际语言写入 URL。页脚切换同步修改 URL，站内页面跳转保留语言；外部链接、下载文件和页内锚点不受影响。
+
+2026-11-13：新增静态「免费获取会员」活动页（rewards.html / rewards.css），保留原生导航与页脚、双语切换；参与步骤、投稿条件、奖励说明均为活动草案，正式发布前请核对奖励时长与审核规则。
