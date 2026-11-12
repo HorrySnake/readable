@@ -1,6 +1,6 @@
 (() => {
   function canonicalPath(pathname) {
-    const match = pathname.match(/^\/(privacy|terms|support)(?:\/(?:index\.html|privacy\.html|terms\.html|support\.html)?|\.html)?$/);
+    const match = pathname.match(/^\/(privacy|terms|support|rewards)(?:\/(?:index\.html|privacy\.html|terms\.html|support\.html|rewards\.html)?|\.html)?$/);
     if (match) return '/' + match[1];
     return pathname === '/index.html' ? '/' : pathname;
   }
@@ -33,7 +33,7 @@
       const destination = new URL(href, location.href);
       if (destination.origin !== location.origin || !['http:', 'https:'].includes(destination.protocol)) return;
       destination.pathname = canonicalPath(destination.pathname);
-      if (!['/', '/privacy', '/terms', '/support'].includes(destination.pathname)) return;
+      if (!['/', '/privacy', '/terms', '/support', '/rewards'].includes(destination.pathname)) return;
       destination.searchParams.set('lang', language);
       link.setAttribute('href', destination.pathname + destination.search + destination.hash);
     });
