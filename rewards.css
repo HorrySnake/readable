@@ -153,42 +153,46 @@
  .rewards-closing{padding-top:82px}
 }
 
-/* Creator partnership: a secondary path for established creators, distinct from the public rewards activity. */
-.rewards-main .creator-hero-entry{display:block;max-width:506px;margin-top:29px;padding:17px 19px 18px;border:1px solid #34323a;border-radius:15px;background:#1b1b1e;color:inherit;text-decoration:none;transition:border-color .2s ease,background .2s ease,transform .2s ease}
-.creator-entry-eyebrow{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:670;letter-spacing:.025em;color:#d8d0e4;line-height:1.4}
-.creator-entry-indicator{width:6px;height:6px;flex:none;border-radius:50%;background:#aea1bf}
-.creator-entry-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:8px}
-.creator-entry-copy{font-size:13px;line-height:1.7;color:#a6a5ad;max-width:420px}
-.creator-entry-arrow{font-size:20px;font-weight:400;color:#cec7d7;line-height:1;flex:none;padding-bottom:3px}
-.rewards-main .creator-hero-entry:hover{background:#222127;border-color:#5b5368;opacity:1;transform:translateY(-1px)}
-.creator-partnership{scroll-margin-top:115px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,0.9fr);gap:46px;align-items:center;margin:74px 24px 0;padding:49px 48px;border:1px solid #34343a;border-radius:28px;background:linear-gradient(125deg,#1d1d21,#19191c 65%,#222028)}
-.creator-partnership-copy{min-width:0}
-.creator-partnership h2{font-size:clamp(29px,3.5vw,39px);line-height:1.25;font-weight:690;letter-spacing:-.04em;margin:16px 0 23px;text-wrap:balance}
-.creator-partnership-copy>p:not(.section-kicker){font-size:14px;line-height:1.9;color:#bcbac3;max-width:525px}
-.creator-partnership-copy>p:not(.section-kicker)+p{margin-top:14px}
-.creator-partnership-copy .creator-partnership-note{font-size:12px!important;color:#93919b!important;margin-top:20px!important}
-.creator-contact-panel{min-width:0;display:flex;flex-direction:column;min-height:305px;padding:24px;border:1px solid #47414d;border-radius:19px;background:radial-gradient(ellipse at 88% 12%,#81709617,transparent 65%),linear-gradient(140deg,#29262f,#1d1c22);box-shadow:inset 0 1px 0 #ffffff0b}
-.creator-contact-top{display:flex;align-items:center;gap:9px;color:#beb5ca;font-size:10px;letter-spacing:.09em;font-weight:700}
-.creator-contact-top img{width:28px;height:28px;object-fit:contain}
-.creator-contact-body{margin:25px 0 22px}
-.creator-contact-symbol{display:block;color:#b9a7d0;font-size:27px;line-height:1;margin-bottom:13px}
-.creator-contact-body h3{font-size:22px;line-height:1.36;letter-spacing:-.03em;font-weight:640;margin:0}
-.creator-contact-body p{font-size:11px;line-height:1.6;color:#a89faf;margin-top:10px!important}
-.creator-contact-button{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:auto;min-height:43px;padding:11px 15px;border-radius:10px;border:1px solid #68606f;background:#ddd7e4;color:#232027;font-size:13px;font-weight:670;transition:background .2s ease}
-.creator-contact-button>span[aria-hidden="true"]{font-size:18px;font-weight:400;line-height:1}
-.rewards-main .creator-contact-button:hover{background:#f3edf8;opacity:1}
+/* A calm, high-contrast invitation in the hero, followed by an editorial partnership section. */
+.rewards-hero{row-gap:38px;padding-bottom:64px}
+.rewards-main .creator-hero-banner{grid-column:1/-1;display:flex;align-items:center;gap:26px;min-width:0;padding:27px 31px;border:1px solid #f3eef7;border-radius:20px;background:linear-gradient(115deg,#f1eff3 0%,#e5e0eb 100%);color:#25212c;text-decoration:none;box-shadow:0 12px 38px #0000001c,inset 0 1px 0 #ffffffcc;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.creator-banner-symbol{width:58px;height:58px;flex:none;display:grid;place-items:center;border:1px solid #d5cbdc;border-radius:17px;background:#ffffff8c;color:#685675;font-size:28px;line-height:1}
+.creator-banner-body{min-width:0;display:flex;flex:1;flex-direction:column;gap:5px}
+.creator-banner-eyebrow{font-size:10px;font-weight:720;letter-spacing:.11em;line-height:1.5;color:#7a6a89}
+.creator-banner-title{font-size:21px;line-height:1.38;letter-spacing:-.035em;font-weight:720;color:#26212d}
+.creator-banner-description{font-size:13px;line-height:1.65;color:#706977}
+.creator-banner-action{display:flex;align-items:center;justify-content:center;gap:15px;flex:none;min-height:44px;padding:10px 14px 10px 18px;border-radius:99px;background:#2e2935;color:#f6f2f9;font-size:12px;font-weight:660;white-space:nowrap}
+.creator-banner-arrow{font-size:16px;line-height:1;font-weight:400}
+.rewards-main .creator-hero-banner:hover{opacity:1;transform:translateY(-2px);background:linear-gradient(115deg,#f9f7fa,#ebe6f1);box-shadow:0 17px 44px #00000029,inset 0 1px 0 #fff}
+.creator-partnership{scroll-margin-top:126px;display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);gap:68px;margin:92px 24px 0;padding:77px 0 80px;border-top:1px solid #39363e;border-bottom:1px solid #39363e}
+.creator-partnership-heading,.creator-partnership-content{min-width:0}
+.creator-partnership h2{font-size:clamp(30px,3.8vw,42px);line-height:1.24;font-weight:690;letter-spacing:-.042em;margin:21px 0 0;text-wrap:balance}
+.creator-partnership-content{padding-top:4px}
+.creator-partnership-content>p:not(.creator-partnership-email){font-size:15px;line-height:1.9;color:#bebbc4;margin:0}
+.creator-partnership-content>p:not(.creator-partnership-email)+p:not(.creator-partnership-email){margin-top:15px}
+.creator-partnership-link{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;min-height:46px;margin-top:28px;padding:12px 18px;border-radius:99px;background:#eceaf0;color:#27222d;font-size:14px;line-height:1.2;font-weight:670;transition:background .2s ease,transform .2s ease}
+.creator-partnership-link>span[aria-hidden="true"]{font-size:19px;font-weight:400;line-height:1}
+.rewards-main .creator-partnership-link:hover{background:#fff;opacity:1;transform:translateY(-1px)}
+.creator-partnership-email{font-size:12px;color:#89848f;margin:13px 0 0!important;overflow-wrap:anywhere}
 @media(max-width:760px){
- .rewards-main .creator-hero-entry{margin-top:27px;padding:16px}
- .creator-partnership{grid-template-columns:1fr;gap:29px;margin:55px 0 0;padding:33px 24px 28px;border-radius:23px}
- .creator-partnership h2{font-size:30px}
- .creator-contact-panel{min-height:270px}
- .creator-partnership-copy>p:not(.section-kicker){font-size:14px}
+ .rewards-hero{row-gap:29px;padding-bottom:48px}
+ .rewards-main .creator-hero-banner{flex-wrap:wrap;column-gap:15px;row-gap:15px;padding:21px 20px;border-radius:18px}
+ .creator-banner-symbol{width:43px;height:43px;border-radius:13px;font-size:23px}
+ .creator-banner-body{flex-basis:calc(100% - 65px)}
+ .creator-banner-title{font-size:18px}
+ .creator-banner-description{font-size:12px;line-height:1.6}
+ .creator-banner-action{margin-left:58px;min-height:37px;padding:9px 14px;font-size:12px}
+ .creator-partnership{grid-template-columns:1fr;gap:24px;margin:77px 8px 0;padding:52px 0 54px}
+ .creator-partnership h2{font-size:clamp(30px,8vw,39px);margin-top:16px}
+ .creator-partnership-content{padding-top:0}
+ .creator-partnership-content>p:not(.creator-partnership-email){font-size:14px;line-height:1.88}
 }
 @media(max-width:380px){
- .creator-partnership{padding:29px 20px 24px}
- .creator-partnership h2{font-size:28px}
- .creator-entry-copy{font-size:12px}
+ .rewards-main .creator-hero-banner{padding:18px 16px}
+ .creator-banner-title{font-size:17px}
+ .creator-banner-action{margin-left:58px}
+ .creator-partnership{margin-left:3px;margin-right:3px}
 }
 @media(prefers-reduced-motion:reduce){
- .rewards-main .creator-hero-entry,.creator-contact-button{transition:none}
+ .rewards-main .creator-hero-banner,.creator-partnership-link{transition:none}
 }
